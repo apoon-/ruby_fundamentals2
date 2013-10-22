@@ -8,9 +8,17 @@ end
 
 #Question 2
 
+puts "Adding rice to the list"
+
 grocery_list << "rice"
 
-puts grocery_list
+def output(array)
+	array.each do |y|
+		puts "* #{y}"
+	end
+end
+
+output(grocery_list)
 
 #Question 3
 
@@ -25,3 +33,27 @@ if missed == false
 elsif missed == true
 	puts "You don't need to pick up bananas today."
 end
+
+#Question 5
+
+puts "The second item on your list is #{grocery_list[1]}."
+
+#Question 6
+
+output(grocery_list.sort)
+
+#Question 7
+
+def delete(array, deletion)
+	if array.include?(deletion)
+		array.delete(deletion)
+	else
+		puts "Item not found"
+	end
+end
+
+puts "What would you like to delete from your grocery list?" 
+deleting = gets.chomp
+
+delete(grocery_list, deleting)
+output(grocery_list)
